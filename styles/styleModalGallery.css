@@ -1,0 +1,99 @@
+body {
+    position: relative;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.modal__gallery--background{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+}
+.modal__gallery {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+}
+.modal__gallery--close{
+    filter: brightness(0) invert(1);
+}
+.modal__gallery--close:hover{
+    cursor: pointer;
+}
+.modal__gallery--container---close{
+    display: flex;
+    justify-content: right;
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+.modal__gallery--thumbnails{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 90%;
+}
+.modal__gallery--images{
+    display: flex;
+    justify-content: center;
+}
+.modal__gallery--thumbnail{
+    width: 20%;
+    margin: 0;
+}
+.modal__gallery--thumbnail > img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10%;
+}
+.modal__gallery--thumbnail > img:hover{
+    border: 2px solid hsl(26, 100%, 55%);
+}
+.modal__gallery--image--container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url("/images/zapatato-bosi-1.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 5%;
+    width: 100%;
+    height: 60%;
+    margin-bottom: 5%;
+}
+
+.modal__gallery--previous {
+    position: absolute;
+    top: 30%;
+    left: 13%;
+}
+
+.modal__gallery--next {
+    position: absolute;
+    top: 30%;
+    left: 75%;
+}
+
+.modal__gallery--previous, .modal__gallery--next{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 4%;
+    width: 2%;
+    height: 3%;
+    padding: 1%;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 50px;
+}
+.modal__gallery--previous:hover, .modal__gallery--next:hover{
+    border: 2px solid hsl(26, 100%, 55%);
+    cursor: pointer;
+}

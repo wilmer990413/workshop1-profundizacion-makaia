@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Products</title>
     <link rel="stylesheet" href="/styles/stylePanel.css" />
+    <link rel="stylesheet" href="/styles/styleModalGallery.css" />
+    <link rel="stylesheet" href="/styles/styleModalForm.css" />
+    <link rel="stylesheet" href="/styles/styleModalEditDelete.css" />
 </head>
 <body>
     <main class="main">
@@ -19,7 +22,9 @@
                 <h1 class="header__title--h">Administrative Panel</h1>
             </div>
         </header>
+        <hr class="line">
         <section class="section">
+            <h1>Products</h1>
             <article class="article__actions">
                 <button class="article__actions--button create">
                     <figure>
@@ -27,20 +32,156 @@
                     </figure>
                     <p>Create</p>
                 </button>
-                <button class="article__actions--button edit">
+            </article>
+            <article class="article__products">
+                <table class="article__products--table">
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Company</th>
+                        <th>Price</th>
+                        <th>Description</th>
+                        <th>Stock</th>
+                        <th>Discount</th>
+                        <th>Genre</th>
+                        <th>Collections</th>
+                        <th>Images</th>
+                    </tr>
+                </table>
+            </article>
+        </section>
+        <!-- gallery modal -->
+        <div class="modal__gallery--background">
+            <article class="modal__gallery">
+                <div class="modal__gallery--container---close">
+                    <img class="modal__gallery--close" src="/images/icon-close.svg" alt="icon close">
+                </div>
+                <div id="imgP" class="modal__gallery--image--container">
+                    <figure class="modal__gallery--previous">
+                        <img src="/images/icon-previous.svg" alt="previous">
+                    </figure>
+                    <figure class="modal__gallery--next">
+                        <img src="/images/icon-next.svg" alt="next">
+                    </figure>
+                </div>
+                <div class="modal__gallery--images">
+                    <div class="modal__gallery--thumbnails">
+                        <figure class="modal__gallery--thumbnail">
+                            <img id="mg1" src="/images/zapatato-bosi-1.png"   alt="thumbnail 1">
+                        </figure>
+                        <figure class="modal__gallery--thumbnail">
+                            <img id="mg2" src="/images/zapatato-bosi-1.png"   alt="thumbnail 2">
+                        </figure>
+                        <figure class="modal__gallery--thumbnail">
+                            <img id="mg3" src="/images/zapatato-bosi-1.png"   alt="thumbnail 3">
+                        </figure>
+                        <figure class="modal__gallery--thumbnail">
+                            <img id="mg4" src="/images/zapatato-bosi-1.png"   alt="thumbnail 4">
+                        </figure>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <!-- create modal -->
+        <div id="createModal" class="modal__form--background">
+            <div class="modal__form--container---close">
+                <img class="modal__form--close" src="/images/icon-close.svg" alt="icon close">
+            </div>
+            <form id="createProduct" class="modal__form--form">
+                <h2>Create</h2>
+                <label class="modal__form--label" for="name">Name</label>
+                <input name="name" id="name" class="modal__form--input" required type="text">
+                <label class="modal__form--label" for="company">Company</label>
+                <input name="company" id="company" class="modal__form--input" required type="text">
+                <label class="modal__form--label" for="price">Price</label>
+                <input name="price" id="price" class="modal__form--input" required type="number">
+                <label class="modal__form--label" for="description">Description</label>
+                <textarea name="description" id="description" class="modal__form--input" required type="text"></textarea>
+                <label class="modal__form--label" for="stock">Stock</label>
+                <input name="stock" id="stock" class="modal__form--input" required type="number">
+                <label class="modal__form--label" for="discount">Discount</label>
+                <input name="discount" id="discount" class="modal__form--input" required type="number">
+                <label class="modal__form--label" for="genre">Genre</label>
+                <div class="modal__form--genre">
+                    <label class="modal__form--label" for="male">Male</label>
+                    <input name="genre" id="male" class="modal__form--input" required type="radio" value="M">
+                    <label class="modal__form--label" for="female">Female</label>
+                    <input name="genre" id="female" class="modal__form--input" required type="radio" value="F">
+                </div>
+                <label class="modal__form--label" for="collections">Collections</label>
+                <input name="collections" id="collections" class="modal__form--input" required type="text">
+                <label class="modal__form--label" for="image1">Image 1</label>
+                <input class="modal__form--input" required type="text" placeholder="URL Image 1" name="image1" id="image1">
+                <label class="modal__form--label" for="image2">Image 2</label>
+                <input class="modal__form--input" required type="text" placeholder="URL Image 2" name="image2" id="image2">
+                <label class="modal__form--label" for="image3">Image 3</label>
+                <input class="modal__form--input" required type="text" placeholder="URL Image 3" name="image3" id="image3">
+                <label class="modal__form--label" for="image4">Image 4</label>
+                <input class="modal__form--input" required type="text" placeholder="URL Image 4" name="image4" id="image4">
+                <button class="modal__form--button" type="submit">Create</button>
+            </form>
+        </div>
+        <!-- edit modal -->
+        <div id="editModal" class="modal__form--background">
+            <div class="modal__form--container---close">
+                <img class="modal__form--close" src="/images/icon-close.svg" alt="icon close">
+            </div>
+            <form id="editProduct" class="modal__form--form">
+                <h2>Edit</h2>
+                <label class="modal__form--label" for="name">Name</label>
+                <input name="name" id="name" class="modal__form--input" required type="text">
+                <label class="modal__form--label" for="company">Company</label>
+                <input name="company" id="company" class="modal__form--input" required type="text">
+                <label class="modal__form--label" for="price">Price</label>
+                <input name="price" id="price" class="modal__form--input" required type="number">
+                <label class="modal__form--label" for="description">Description</label>
+                <textarea name="description" id="description" class="modal__form--input" required type="text"></textarea>
+                <label class="modal__form--label" for="stock">Stock</label>
+                <input name="stock" id="stock" class="modal__form--input" required type="number">
+                <label class="modal__form--label" for="discount">Discount</label>
+                <input name="discount" id="discount" class="modal__form--input" required type="number">
+                <label class="modal__form--label" for="genre">Genre</label>
+                <div class="modal__form--genre">
+                    <label class="modal__form--label" for="male">Male</label>
+                    <input name="genre" id="male" class="modal__form--input" required type="radio" value="M">
+                    <label class="modal__form--label" for="female">Female</label>
+                    <input name="genre" id="female" class="modal__form--input" required type="radio" value="F">
+                </div>
+                <label class="modal__form--label" for="collections">Collections</label>
+                <input name="collections" id="collections" class="modal__form--input" required type="text">
+                <label class="modal__form--label" for="image1">Image 1</label>
+                <input class="modal__form--input" required type="text" placeholder="URL Image 1" name="image1" id="image1">
+                <label class="modal__form--label" for="image2">Image 2</label>
+                <input class="modal__form--input" required type="text" placeholder="URL Image 2" name="image2" id="image2">
+                <label class="modal__form--label" for="image3">Image 3</label>
+                <input class="modal__form--input" required type="text" placeholder="URL Image 3" name="image3" id="image3">
+                <label class="modal__form--label" for="image4">Image 4</label>
+                <input class="modal__form--input" required type="text" placeholder="URL Image 4" name="image4" id="image4">
+                <button class="modal__form--button" type="submit">Create</button>
+            </form>
+        </div>
+        <!-- edit y delete modal -->
+        <div id="editDeleteModal" class="modal__editdelete--background">
+            <div class="modal__editdelete--container---close">
+                <img class="modal__editdelete--close" src="/images/icon-close.svg" alt="icon close">
+            </div>
+            <div class = "modal__editdelete">
+                <button class="modal__editdelete--button edit">
                     <figure>
                         <img src="/images/icon-edit.svg" alt="cart">
                     </figure>
                     <p>Edit</p>
                 </button>
-                <button class="article__actions--button delete">
+                <button class="modal__editdelete--button delete">
                     <figure>
                         <img src="/images/icon-delete.svg" alt="cart">
                     </figure>
                     <p>Delete</p>
                 </button>
-            </article>
-        </section>
+            </div>
+        </div>
     </main>
+    <script src="/scripts/productPanel.js" type="module"></script>
+    <script src="/scripts/modalForm.js"></script>
 </body>
 </html>

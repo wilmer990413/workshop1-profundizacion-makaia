@@ -5,8 +5,8 @@
 }
 
 .main{
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .header{
@@ -18,6 +18,12 @@
     width: 50%;
     display: flex;
     justify-content: center;
+}
+
+.line{
+    border-color: hsl(223, 64%, 98%);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .section{
@@ -34,16 +40,6 @@
 .create:hover{
     cursor: pointer;
     background-color: hsl(101, 84%, 64%);
-}
-
-.edit:hover{
-    cursor: pointer;
-    background-color: hsl(204, 84%, 64%);
-}
-
-.delete:hover{
-    cursor: pointer;
-    background-color: hsl(12, 84%, 64%);
 }
 
 .article__actions--button{
@@ -66,4 +62,54 @@
 
 .article__actions--button > figure > img {
     width: 100%;
+}
+
+.article__products{
+    margin-top: 3%;
+}
+
+.article__products--table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}  
+.article__products--table td, .article__products--table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.article__products--table tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+.article__products--table tr:hover {
+    background-color: #ddd;
+}
+
+.article__products--table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: hsl(26, 100%, 55%);
+    color: white;
+}
+
+.images__products{
+    margin: 0;
+    width: 100%;
+    border-radius: 15px;
+}
+
+.images__products:hover{
+    cursor: pointer;
+    border: 1px solid hsl(26, 100%, 55%);
+}
+
+.images__products > img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.article__products--table--tr:hover{
+    cursor:pointer;
 }

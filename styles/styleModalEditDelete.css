@@ -1,0 +1,74 @@
+body {
+    position: relative;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.modal__editdelete--background{
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+}
+
+.modal__editdelete--close{
+    filter: brightness(0) invert(1);
+}
+.modal__editdelete--close:hover{
+    cursor: pointer;
+}
+.modal__editdelete--container---close{
+    display: flex;
+    margin-bottom: 2%;
+    margin-top: 10%;
+    margin-left: 45%;
+}
+
+.modal__editdelete{
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+    background-color: white;
+    border-radius: 15px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.modal__editdelete--button{
+    width: 30%;
+    border: 1px solid hsl(26, 100%, 55%);
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 15px;
+    align-items: center;
+    background-color: hsl(25, 100%, 94%);
+    font-weight: 900;
+    font-size: 120%;
+}
+
+.modal__editdelete--button > figure{
+    margin: 0;
+}
+
+.modal__editdelete--button > figure > img {
+    width: 100%;
+}
+
+.edit:hover{
+    cursor: pointer;
+    background-color: hsl(204, 84%, 64%);
+}
+
+.delete:hover{
+    cursor: pointer;
+    background-color: hsl(12, 84%, 64%);
+}
