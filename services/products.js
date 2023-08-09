@@ -29,6 +29,20 @@ const productByName = async (name) => {
     }
 }
 
+const productById = async (id) => {
+    try {
+        const response = await axios.get('http://localhost:3000/products/'+id);
+        if(response.status !== 200){
+            throw new Error('Error en la respuesta HTTP: ' + response.status);
+        }else{
+            const productByIdData = response.data;
+            return productByIdData;
+        }
+    } catch(e) {
+        alertHTTPConextion(e);
+    }
+}
+
 const listProductsByGenre = async (genre) => {
     try {
         const response = await axios.get('http://localhost:3000/products?genre='+genre);
@@ -60,4 +74,17 @@ const createProduct = async (data) => {
     }
 }
 
-export {listProducts,productByName,listProductsByGenre,createProduct};
+const updateProduct = async (data) => {
+    try {
+        const response = await axios.put('http://localhost:3000/products', data);
+        if(response.status !== 201){
+            throw new Error('Error en la respuesta HTTP: ' + response.status);
+        }else{
+            return response.status;
+        }
+    } catch(e) {
+        alertHTTPConextion(e);
+    }
+}
+
+export {listProducts,productByName,listProductsByGenre,createProduct,updateProduct, productById};

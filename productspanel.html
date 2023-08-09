@@ -85,7 +85,7 @@
         <!-- create modal -->
         <div id="createModal" class="modal__form--background">
             <div class="modal__form--container---close">
-                <img class="modal__form--close" src="/images/icon-close.svg" alt="icon close">
+                <img id="closeImgCreate" class="modal__form--close" src="/images/icon-close.svg" alt="icon close">
             </div>
             <form id="createProduct" class="modal__form--form">
                 <h2>Create</h2>
@@ -109,7 +109,8 @@
                     <input name="genre" id="female" class="modal__form--input" required type="radio" value="F">
                 </div>
                 <label class="modal__form--label" for="collections">Collections</label>
-                <input name="collections" id="collections" class="modal__form--input" required type="text">
+                <select name="collections" id="collections" class="modal__form--input" required>
+                </select>
                 <label class="modal__form--label" for="image1">Image 1</label>
                 <input class="modal__form--input" required type="text" placeholder="URL Image 1" name="image1" id="image1">
                 <label class="modal__form--label" for="image2">Image 2</label>
@@ -124,7 +125,7 @@
         <!-- edit modal -->
         <div id="editModal" class="modal__form--background">
             <div class="modal__form--container---close">
-                <img class="modal__form--close" src="/images/icon-close.svg" alt="icon close">
+                <img id="closeImgEdit" class="modal__form--close" src="/images/icon-close.svg" alt="icon close">
             </div>
             <form id="editProduct" class="modal__form--form">
                 <h2>Edit</h2>
@@ -148,7 +149,8 @@
                     <input name="genre" id="female" class="modal__form--input" required type="radio" value="F">
                 </div>
                 <label class="modal__form--label" for="collections">Collections</label>
-                <input name="collections" id="collections" class="modal__form--input" required type="text">
+                <select name="collections" id="collections" class="modal__form--input" required>
+                </select>
                 <label class="modal__form--label" for="image1">Image 1</label>
                 <input class="modal__form--input" required type="text" placeholder="URL Image 1" name="image1" id="image1">
                 <label class="modal__form--label" for="image2">Image 2</label>
@@ -157,7 +159,7 @@
                 <input class="modal__form--input" required type="text" placeholder="URL Image 3" name="image3" id="image3">
                 <label class="modal__form--label" for="image4">Image 4</label>
                 <input class="modal__form--input" required type="text" placeholder="URL Image 4" name="image4" id="image4">
-                <button class="modal__form--button" type="submit">Create</button>
+                <button class="modal__form--button" type="submit">Edit</button>
             </form>
         </div>
         <!-- edit y delete modal -->
@@ -183,5 +185,6 @@
     </main>
     <script src="/scripts/productPanel.js" type="module"></script>
     <script src="/scripts/modalForm.js"></script>
+    <script src="/scripts/modalEditDelete.js"></script>
 </body>
 </html>
