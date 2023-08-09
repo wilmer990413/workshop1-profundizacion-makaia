@@ -1,9 +1,10 @@
 import {alertHTTPConextion} from "../sweetalert/alertHTTP.js";
 import axios from 'https://cdn.jsdelivr.net/npm/axios@1.4.0/+esm';
+const endpointProducts = 'http://localhost:3000/products';
 
-const listProducts = async () => {
+export const listProducts = async () => {
     try {
-        const response = await axios.get('http://localhost:3000/products');
+        const response = await axios.get(endpointProducts); 
         if(response.status !== 200){
             throw new Error('Error en la respuesta HTTP: ' + response.status);
         }else{
@@ -15,9 +16,9 @@ const listProducts = async () => {
     }
 }
 
-const productByName = async (name) => {
+export const productByName = async (name) => {
     try {
-        const response = await axios.get('http://localhost:3000/products?name='+name);
+        const response = await axios.get(endpointProducts+'?name='+name);
         if(response.status !== 200){
             throw new Error('Error en la respuesta HTTP: ' + response.status);
         }else{
@@ -29,9 +30,9 @@ const productByName = async (name) => {
     }
 }
 
-const productById = async (id) => {
+export const productById = async (id) => {
     try {
-        const response = await axios.get('http://localhost:3000/products/'+id);
+        const response = await axios.get(endpointProducts+'/'+id);
         if(response.status !== 200){
             throw new Error('Error en la respuesta HTTP: ' + response.status);
         }else{
@@ -43,9 +44,9 @@ const productById = async (id) => {
     }
 }
 
-const listProductsByGenre = async (genre) => {
+export const listProductsByGenre = async (genre) => {
     try {
-        const response = await axios.get('http://localhost:3000/products?genre='+genre);
+        const response = await axios.get(endpointProducts+'?genre='+genre);
         if(response.status !== 200){
             throw new Error('Error en la respuesta HTTP: ' + response.status);
         }else{
@@ -57,9 +58,9 @@ const listProductsByGenre = async (genre) => {
     }
 }
 
-const createProduct = async (data) => {
+export const createProduct = async (data) => {
     try {
-        const response = await axios.post('http://localhost:3000/products', data, {
+        const response = await axios.post(endpointProducts, data, {
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -74,10 +75,10 @@ const createProduct = async (data) => {
     }
 }
 
-const updateProduct = async (data) => {
+export const updateProduct = async (id,data) => {
     try {
-        const response = await axios.put('http://localhost:3000/products', data);
-        if(response.status !== 201){
+        const response = await axios.put(endpointProducts+'/'+id, data);
+        if(response.status !== 200){
             throw new Error('Error en la respuesta HTTP: ' + response.status);
         }else{
             return response.status;
@@ -87,4 +88,15 @@ const updateProduct = async (data) => {
     }
 }
 
-export {listProducts,productByName,listProductsByGenre,createProduct,updateProduct, productById};
+export const deleteProduct = async (id) => {
+    try {
+        const response = await axios.delete(endpointProducts+'/'+id);
+        if(response.status !== 200){
+            throw new Error('Error en la respuesta HTTP: ' + response.status);
+        }else{
+            return response.status;
+        }
+    } catch(e) {
+        alertHTTPConextion(e);
+    }
+}

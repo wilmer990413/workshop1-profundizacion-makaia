@@ -1,70 +1,10 @@
 
-import { listProducts,createProduct,updateProduct,productById } from '../services/products.js';
+import { listProducts,createProduct,updateProduct,productById,deleteProduct } from '../services/products.js';
 import { listCollections } from '../services/collections.js';
-import {alertConfirmationCreate,alertCreate,alertConfirmationEdit} from '../sweetalert/alertConfirmation.js';
+import {alertConfirmationAction,alertMessageSuccessAction} from '../sweetalert/alertConfirmation.js';
 
 const formCreate = document.getElementById('createProduct');
 const formEdit = document.getElementById('editProduct');
-
-formCreate.addEventListener( 'submit', async function (event) {
-    event.preventDefault();
-    const formCreateData = new FormData(formCreate);
-    let productData = cleanDataFormProduct(formCreateData);
-    await alertConfirmationCreate(
-        async ()=>{
-            let response = await createProduct(productData);
-            if(response === 201){
-                await alertCreate(
-                    async () =>{
-                        document.querySelector('.modal__form--background').style.display = 'none';
-                        location.reload();
-                    }
-                );
-            }
-        },
-        ()=>{}
-    );
-});
-
-formEdit.addEventListener('submit',async function(event){
-    event.preventDefault();
-    const formEditData = new FormData(formEdit);
-    let productData = cleanDataFormProduct(formEditData);
-    await alertConfirmationEdit(
-        async () => {
-            let response = await updateProduct(productData);
-            if(response === 201){
-                await alertCreate(
-                    async () =>{
-                        document.querySelector('.modal__form--background').style.display = 'none';
-                        location.reload();
-                    }
-                );
-            }
-        },
-        ()=>{}
-    );
-});
-
-function cleanDataFormProduct(formData){
-    const productData = {};
-    for (let [key, value] of formData.entries()) {
-        productData[key] = value;
-    }
-    let auxJson = {
-        images: []
-    }
-    auxJson.images[0]={link: productData.image1};
-    auxJson.images[1]={link: productData.image2};
-    auxJson.images[2]={link: productData.image3};
-    auxJson.images[3]={link: productData.image4};
-    delete productData.image1;
-    delete productData.image2;
-    delete productData.image3;
-    delete productData.image4;
-    Object.assign(productData, auxJson);
-    return productData;
-}
 
 async function startProductPanel(){
     let products = await listProducts();
@@ -93,29 +33,13 @@ async function startProductPanel(){
     aggEventsTableProducts();
 }
 
-function aggEventsTableProducts(){
-    let productsInTable = document.querySelectorAll('.article__products--table--tr');
-    for (let index = 0; index < productsInTable.length; index++) {
-        productsInTable[index].addEventListener('click',function () {selectionEditOrDelete(index);});
-    }
-}
-
-function selectionEditOrDelete(index){
-    let idProduct = document.querySelectorAll('.article__products--table--tr ')[index].querySelector('td').textContent;
-    document.querySelector('.modal__editdelete--background').style.display = 'flex';
-    document.querySelector('.edit').addEventListener('click', ()=>{startEditProduct(idProduct)});
-}
-
-function startEditProduct(idProduct){
-    document.getElementById('editDeleteModal').style.display='none';
-    document.getElementById('editModal').style.display = 'flex';
-    printCollectionsInFrom();
-    completeFormEdit(idProduct);
-}
-
 function startCreateProduct(){
     document.getElementById('createModal').style.display = 'flex';
     printCollectionsInFrom();
+    formCreate.addEventListener( 'submit', async function (event) {
+        event.preventDefault();
+        actionButtonCreateProduct();
+    });
 }
 
 async function printCollectionsInFrom(){
@@ -129,6 +53,92 @@ async function printCollectionsInFrom(){
             `;
         });
     }
+}
+
+async function actionButtonCreateProduct(){
+    const formCreateData = new FormData(formCreate);
+    let productData = cleanDataFormProduct(formCreateData);
+    await alertConfirmationAction(
+        '¿Esta seguro que quiere crear el producto?',
+        async ()=>{
+            let response = await createProduct(productData);
+            if(response === 201){
+                await alertMessageSuccessAction(
+                    'El producto se creo con exito',
+                    async () =>{
+                        document.querySelector('.modal__form--background').style.display = 'none';
+                        location.reload();
+                    }
+                );
+            }
+        },
+        ()=>{}
+    );
+}
+
+function cleanDataFormProduct(formData){
+    const productData = {};
+    for (let [key, value] of formData.entries()) {
+        productData[key] = value;
+    }
+    let auxJson = {
+        images: []
+    }
+    auxJson.images[0]={link: productData.image1};
+    auxJson.images[1]={link: productData.image2};
+    auxJson.images[2]={link: productData.image3};
+    auxJson.images[3]={link: productData.image4};
+    delete productData.image1;
+    delete productData.image2;
+    delete productData.image3;
+    delete productData.image4;
+    Object.assign(productData, auxJson);
+    return productData;
+}
+
+function aggEventsTableProducts(){
+    let productsInTable = document.querySelectorAll('.article__products--table--tr');
+    for (let index = 0; index < productsInTable.length; index++) {
+        productsInTable[index].addEventListener('click',function () {selectionEditOrDelete(index);});
+    }
+}
+
+function selectionEditOrDelete(index){
+    let idProduct = document.querySelectorAll('.article__products--table--tr ')[index].querySelector('td').textContent;
+    document.querySelector('.modal__editdelete--background').style.display = 'flex';
+    document.querySelector('.modal__editdelete').focus();
+    document.querySelector('.edit').addEventListener('click', ()=>{startEditProduct(idProduct)});
+    document.querySelector('.delete').addEventListener('click',()=>{startDeleteProduct(idProduct)});
+}
+
+async function startDeleteProduct(idProduct){
+    await alertConfirmationAction(
+        '¿Esta seguro que quiere eliminar el producto?',
+        async () => {
+            let response = await deleteProduct(idProduct);
+            if(response === 200){
+                await alertMessageSuccessAction(
+                    'El producto se elimino con exito',
+                    async () =>{
+                        document.querySelector('.modal__editdelete--background').style.display = 'none';
+                        location.reload();
+                    }
+                );
+            }
+        },
+        ()=>{}
+    );
+}
+
+function startEditProduct(idProduct){
+    document.getElementById('editDeleteModal').style.display='none';
+    document.getElementById('editModal').style.display = 'flex';
+    printCollectionsInFrom();
+    completeFormEdit(idProduct);
+    formEdit.addEventListener('submit',async function(event){
+        event.preventDefault();
+        actionButtonUpdateProduct(idProduct);
+    });
 }
 
 async function completeFormEdit(idProduct){
@@ -145,6 +155,27 @@ async function completeFormEdit(idProduct){
     formEdit.image2.value = product.images[1].link;
     formEdit.image3.value = product.images[2].link;
     formEdit.image4.value = product.images[3].link;
+}
+
+async function actionButtonUpdateProduct(idProduct){
+    const formEditData = new FormData(formEdit);
+    let productData = cleanDataFormProduct(formEditData);
+    await alertConfirmationAction(
+        '¿Esta seguro que quiere editar el producto?',
+        async () => {
+            let response = await updateProduct(idProduct,productData);
+            if(response === 200){
+                await alertMessageSuccessAction(
+                    'El producto se actualizo con exito',
+                    async () =>{
+                        document.querySelector('.modal__form--background').style.display = 'none';
+                        location.reload();
+                    }
+                );
+            }
+        },
+        ()=>{}
+    );
 }
 
 startProductPanel();

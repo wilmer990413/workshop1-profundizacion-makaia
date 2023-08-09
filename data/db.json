@@ -3,12 +3,12 @@
     {
       "name": "Nike Air Force",
       "company": "Nike",
-      "price": 500000,
+      "price": "500000",
       "description": "Suma puntos con este clásico del baloncesto legendario. Con un diseño que combina la comodidad sobre el parqué con un estilo fuera de la cancha, estas AF1 lucen revestimientos de piel suave y piel en relieve para ofrecer un estilo de baloncesto. Las unidades Air ocultas y la duradera confección de los 80, que rinde homenaje a una era, añaden la comodidad que más te gusta.",
-      "stock": 5,
-      "discount": 50,
+      "stock": "12",
+      "discount": "50",
       "genre": "M",
-      "collections": 2,
+      "collections": "2",
       "images": [
         {
           "link": "/images/zapatato-nike-1.png"
@@ -28,12 +28,12 @@
     {
       "name": "Nike Dunk Low",
       "company": "Nike",
-      "price": 400000,
+      "price": "400000",
       "description": "El icono del baloncesto de los 80, creado para la cancha y adaptado al estilo urbano, vuelve con revestimientos de brillo perfecto y los colores clásicos del equipo. Con su diseño icónico de baloncesto, las Nike Dunk Low llevan de nuevo el estilo vintage de los 80 a las calles, y su zona del tobillo de perfil bajo y acolchada permite jugar con comodidad donde quieras.",
-      "stock": 5,
-      "discount": 50,
+      "stock": "6",
+      "discount": "50",
       "genre": "F",
-      "collections": 2,
+      "collections": "2",
       "images": [
         {
           "link": "/images/zapatato-nike-2-1.png"
@@ -53,12 +53,12 @@
     {
       "name": "Zapatos Casuales Para Hombree Jenkyns",
       "company": "Bosi",
-      "price": 300000,
+      "price": "300000",
       "description": "Zapato casual de la marca Bosi fabricado en fino cuero con sutiles costuras y originales detalles. Cierre de cordones que se adapta perfecto a cualquier tipo de empeine. El forro de cuero garantiza la perfecta comodidad de estos innovadores zapatos casuales. Con suela de goma cómoda y flexible que ofrece además muy buena elasticidad, adherencia al suelo y resistencia al desgaste.",
-      "stock": 5,
-      "discount": 30,
+      "stock": "15",
+      "discount": "30",
       "genre": "M",
-      "collections": 1,
+      "collections": "1",
       "images": [
         {
           "link": "/images/zapatato-bosi-2-1.png"
