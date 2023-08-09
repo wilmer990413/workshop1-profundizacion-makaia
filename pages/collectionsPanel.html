@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="/styles/stylePanel.css" />
+    <link rel="stylesheet" href="/styles/styleModalForm.css" />
+    <link rel="stylesheet" href="/styles/styleModalEditDelete.css" />
+</head>
+<body>
+    <main class="main">
+        <header class="header">
+            <figure class="header__menu--icon">
+                <img src="/images/icon-menu.svg" alt="menu icon">
+            </figure>
+            <figure class="header__logo">
+                <img src="/images/logo.svg" alt="logo">
+            </figure>
+            <div class="header__title">
+                <h1 class="header__title--h">Administrative Panel</h1>
+            </div>
+        </header>
+        <hr class="line">
+        <section class="section">
+            <h1>Collections</h1>
+            <article class="article__actions">
+                <button class="article__actions--button create">
+                    <figure>
+                        <img src="/images/icon-plus.svg" alt="cart">
+                    </figure>
+                    <p>Create</p>
+                </button>
+            </article>
+            <article class="article__items">
+                <table class="article__items--table">
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                    </tr>
+                </table>
+            </article>
+        </section>
+    </main>
+    <!-- create modal -->
+    <div id="createModal" class="modal__form--background">
+        <div class="modal__form--container---close">
+            <img id="closeImgCreate" class="modal__form--close" src="/images/icon-close.svg" alt="icon close">
+        </div>
+        <form id="createCollection" class="modal__form--form">
+            <h2>Create</h2>
+            <label class="modal__form--label" for="name">Name</label>
+            <input name="name" id="name" class="modal__form--input" required type="text">
+            <button class="modal__form--button" type="submit">Create</button>
+        </form>
+    </div>
+    <!-- edit modal -->
+    <div id="editModal" class="modal__form--background">
+        <div class="modal__form--container---close">
+            <img id="closeImgEdit" class="modal__form--close" src="/images/icon-close.svg" alt="icon close">
+        </div>
+        <form id="editCollection" class="modal__form--form">
+            <h2>Edit</h2>
+            <label class="modal__form--label" for="name">Name</label>
+            <input name="name" id="name" class="modal__form--input" required type="text">
+            <button class="modal__form--button" type="submit">Edit</button>
+        </form>
+    </div>
+    <!-- edit y delete modal -->
+    <div id="editDeleteModal" class="modal__editdelete--background">
+        <div class="modal__editdelete--container---close">
+            <img class="modal__editdelete--close" src="/images/icon-close.svg" alt="icon close">
+        </div>
+        <div class = "modal__editdelete" tabindex="0">
+            <button class="modal__editdelete--button edit">
+                <figure>
+                    <img src="/images/icon-edit.svg" alt="cart">
+                </figure>
+                <p>Edit</p>
+            </button>
+            <button class="modal__editdelete--button delete">
+                <figure>
+                    <img src="/images/icon-delete.svg" alt="cart">
+                </figure>
+                <p>Delete</p>
+            </button>
+        </div>
+    </div>
+    <script src="/scripts/collectionsPanel.js" type="module"></script>
+    <script src="/scripts/modalForm.js"></script>
+    <script src="/scripts/modalEditDelete.js"></script>
+</body>
+</html>

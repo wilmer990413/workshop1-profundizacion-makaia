@@ -18,7 +18,7 @@ body {
 }
 
 .header {
-    background-color: rgb(238, 91, 33);;
+    background-color: hsl(26, 100%, 55%);
     display: flex;
     align-items: center;
     padding: 15px;
@@ -35,7 +35,7 @@ body {
     justify-content: center;
     padding: 20px;
     gap: 40px;
-    background-color: rgb(248, 160, 126);;
+    background-color: hsl(25, 93%, 82%);
     border-radius: 0 0 15px 15px;
     /*height: 325px;*/
     height: 325px;
@@ -63,7 +63,7 @@ body {
     height: 50px;
 }
 
-.main-container__profile__img-logo {
+.main-container__profile__img--logo {
     width: 100%;
 }
 
@@ -77,16 +77,14 @@ body {
     border-radius: 15px;
     align-items: center;
     gap: 25px;
-
 }
 .buttons__style{
-    background-color: rgb(238, 91, 33);
+    background-color: hsl(26, 100%, 55%);
     width: 100%;
     height: 57px;
     border-radius: 8px;
     border: none;
-    font-size: 0.9em;
-    font-weight: 700;
+    font-weight: 900;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -99,17 +97,14 @@ body {
     }
 }
 
-.Pie-de-pag {
+.footer {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 20px 0px;
-
     & h3 {
-        color: #e7530e;
+        color: hsl(26, 100%, 55%);
     }
-
-
 }
 

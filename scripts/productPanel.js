@@ -8,10 +8,10 @@ const formEdit = document.getElementById('editProduct');
 
 async function startProductPanel(){
     let products = await listProducts();
-    let tableProducts = document.querySelector('.article__products--table');
+    let tableProducts = document.querySelector('.article__items--table');
     products.forEach(product => {
         tableProducts.innerHTML+= `
-        <tr class="article__products--table--tr">
+        <tr class="article__items--table--tr">
             <td>${product.id}</td>
             <td>${product.name}</td>
             <td>${product.company}</td>
@@ -97,14 +97,14 @@ function cleanDataFormProduct(formData){
 }
 
 function aggEventsTableProducts(){
-    let productsInTable = document.querySelectorAll('.article__products--table--tr');
+    let productsInTable = document.querySelectorAll('.article__items--table--tr');
     for (let index = 0; index < productsInTable.length; index++) {
         productsInTable[index].addEventListener('click',function () {selectionEditOrDelete(index);});
     }
 }
 
 function selectionEditOrDelete(index){
-    let idProduct = document.querySelectorAll('.article__products--table--tr ')[index].querySelector('td').textContent;
+    let idProduct = document.querySelectorAll('.article__items--table--tr ')[index].querySelector('td').textContent;
     document.querySelector('.modal__editdelete--background').style.display = 'flex';
     document.querySelector('.modal__editdelete').focus();
     document.querySelector('.edit').addEventListener('click', ()=>{startEditProduct(idProduct)});
