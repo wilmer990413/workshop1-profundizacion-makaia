@@ -8,8 +8,7 @@ export const listCollections = async () => {
         if(response.status !== 200){
             throw new Error('Error en la respuesta HTTP: ' + response.status);
         }else{
-            const collectionsData = response.data;
-            return collectionsData;
+            return response.data;
         }
     } catch(e) {
         alertHTTPConextion(e);
@@ -21,8 +20,7 @@ export const collectionsById = async (id) =>{
         if(response.status !== 200){
             throw new Error('Error en la respuesta HTTP: ' + response.status);
         }else{
-            const collectionsByIdData = response.data;
-            return collectionsByIdData;
+            return response.data;
         }
     } catch(e) {
         alertHTTPConextion(e);

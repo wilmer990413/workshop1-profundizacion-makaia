@@ -8,8 +8,7 @@ export const listProducts = async () => {
         if(response.status !== 200){
             throw new Error('Error en la respuesta HTTP: ' + response.status);
         }else{
-            const listProductsData = response.data;
-            return listProductsData;
+            return response.data;
         }
     } catch(e) {
         alertHTTPConextion(e);
@@ -22,8 +21,7 @@ export const productByName = async (name) => {
         if(response.status !== 200){
             throw new Error('Error en la respuesta HTTP: ' + response.status);
         }else{
-            const productByNameData = response.data;
-            return productByNameData;
+            return response.data;
         }
     } catch(e) {
         alertHTTPConextion(e);
@@ -36,8 +34,7 @@ export const productById = async (id) => {
         if(response.status !== 200){
             throw new Error('Error en la respuesta HTTP: ' + response.status);
         }else{
-            const productByIdData = response.data;
-            return productByIdData;
+            return response.data;
         }
     } catch(e) {
         alertHTTPConextion(e);
@@ -50,8 +47,7 @@ export const listProductsByGenre = async (genre) => {
         if(response.status !== 200){
             throw new Error('Error en la respuesta HTTP: ' + response.status);
         }else{
-            const listProductsByGenreData = response.data;
-            return listProductsByGenreData;
+            return response.data;
         }
     } catch(e) {
         alertHTTPConextion(e);
