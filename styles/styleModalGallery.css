@@ -35,6 +35,9 @@ body {
     margin-bottom: 2%;
     margin-top: 2%;
 }
+.modal__gallery--container---close:focus{
+    outline: none;
+}
 .modal__gallery--thumbnails{
     display: flex;
     flex-direction: row;

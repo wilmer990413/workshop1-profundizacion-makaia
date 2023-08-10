@@ -1,6 +1,7 @@
 export function showModalGallery(product){
     document.querySelector('.modal__gallery--background').style.display = 'flex';
     printHTMLModalGallery();
+    document.querySelector('.modal__gallery--container---close').focus();
     document.getElementById('imgP').style.backgroundImage = `url('${product.images[0].link}')`;
     document.getElementById('mg1').src = product.images[0].link;
     document.getElementById('mg2').src = product.images[1].link;
@@ -58,7 +59,7 @@ function nextOrPlusImageModalGallery(images,accion,id){
 function printHTMLModalGallery(){
     document.querySelector('.modal__gallery--background').innerHTML = `
     <article class="modal__gallery">
-        <div class="modal__gallery--container---close">
+        <div class="modal__gallery--container---close" tabindex="0">
             <img class="modal__gallery--close" src="../images/icon-close.svg" alt="icon close">
         </div>
         <div id="imgP" class="modal__gallery--image--container">
