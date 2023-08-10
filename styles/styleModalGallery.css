@@ -61,7 +61,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-image: url("/images/zapatato-bosi-1.png");
+    background-image: url("../images/zapatato-bosi-1.png");
     background-size: cover;
     background-position: center;
     border-radius: 5%;

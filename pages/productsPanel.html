@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
-    <link rel="stylesheet" href="/styles/stylePanel.css" />
-    <link rel="stylesheet" href="/styles/styleModalGallery.css" />
-    <link rel="stylesheet" href="/styles/styleModalForm.css" />
-    <link rel="stylesheet" href="/styles/styleModalEditDelete.css" />
-    <link rel="stylesheet" href="/styles/styleNavBarVertical.css" />
+    <link rel="stylesheet" href="../styles/stylePanel.css" />
+    <link rel="stylesheet" href="../styles/styleModalGallery.css" />
+    <link rel="stylesheet" href="../styles/styleModalForm.css" />
+    <link rel="stylesheet" href="../styles/styleModalEditDelete.css" />
+    <link rel="stylesheet" href="../styles/styleNavBarVertical.css" />
 </head>
 <body>
     <main class="main">
         <header class="header">
             <figure class="header__menu--icon">
-                <img src="/images/icon-menu.svg" alt="menu icon">
+                <img src="../images/icon-menu.svg" alt="menu icon">
             </figure>
             <figure class="header__logo">
-                <img src="/images/logo.svg" alt="logo">
+                <img src="../images/logo.svg" alt="logo">
             </figure>
             <div class="header__title">
                 <h1 class="header__title--h">Administrative Panel</h1>
@@ -29,7 +29,7 @@
             <article class="article__actions">
                 <button class="article__actions--button create">
                     <figure>
-                        <img src="/images/icon-plus.svg" alt="cart">
+                        <img src="../images/icon-plus.svg" alt="cart">
                     </figure>
                     <p>Create</p>
                 </button>
@@ -58,7 +58,7 @@
     <!-- create modal -->
     <div id="createModal" class="modal__form--background">
         <div class="modal__form--container---close">
-            <img id="closeImgCreate" class="modal__form--close" src="/images/icon-close.svg" alt="icon close">
+            <img id="closeImgCreate" class="modal__form--close" src="../images/icon-close.svg" alt="icon close">
         </div>
         <form id="createProduct" class="modal__form--form">
             <h2>Create</h2>
@@ -98,7 +98,7 @@
     <!-- edit modal -->
     <div id="editModal" class="modal__form--background">
         <div class="modal__form--container---close">
-            <img id="closeImgEdit" class="modal__form--close" src="/images/icon-close.svg" alt="icon close">
+            <img id="closeImgEdit" class="modal__form--close" src="../images/icon-close.svg" alt="icon close">
         </div>
         <form id="editProduct" class="modal__form--form">
             <h2>Edit</h2>
@@ -138,18 +138,18 @@
     <!-- edit y delete modal -->
     <div id="editDeleteModal" class="modal__editdelete--background">
         <div class="modal__editdelete--container---close">
-            <img class="modal__editdelete--close" src="/images/icon-close.svg" alt="icon close">
+            <img class="modal__editdelete--close" src="../images/icon-close.svg" alt="icon close">
         </div>
         <div class = "modal__editdelete" tabindex="0">
             <button class="modal__editdelete--button edit">
                 <figure>
-                    <img src="/images/icon-edit.svg" alt="cart">
+                    <img src="../images/icon-edit.svg" alt="cart">
                 </figure>
                 <p>Edit</p>
             </button>
             <button class="modal__editdelete--button delete">
                 <figure>
-                    <img src="/images/icon-delete.svg" alt="cart">
+                    <img src="../images/icon-delete.svg" alt="cart">
                 </figure>
                 <p>Delete</p>
             </button>
@@ -159,16 +159,17 @@
     <div class="modal-navbar_background">
         <nav class="modal-navbar">
             <figure class="modal-navbar_close-icon">
-                <img src="/images/icon-close.svg" alt="close icon">
+                <img src="../images/icon-close.svg" alt="close icon">
             </figure>
             <ul class="modal-navbar_items">
-                <li><a class="modal-navbar_link" href="/pages/productsPanel.html">Products</a></li>
-                <li><a class="modal-navbar_link" href="/pages/collectionsPanel.html">Collections</a></li>
+                <li><a class="modal-navbar_link" href="../Index.html">Home</a></li>
+                <li><a class="modal-navbar_link" href="../pages/productsPanel.html">Products</a></li>
+                <li><a class="modal-navbar_link" href="../pages/collectionsPanel.html">Collections</a></li>
             </ul>
         </nav>
     </div>
-    <script src="/scripts/productPanel.js" type="module"></script>
-    <script src="/scripts/modalForm.js" type="module"></script>
-    <script src="/scripts/modalEditDelete.js" type="module"></script>
+    <script src="../scripts/productPanel.js" type="module"></script>
+    <script src="../scripts/modalForm.js" type="module"></script>
+    <script src="../scripts/modalEditDelete.js" type="module"></script>
 </body>
 </html>

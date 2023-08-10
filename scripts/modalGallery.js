@@ -59,29 +59,29 @@ function printHTMLModalGallery(){
     document.querySelector('.modal__gallery--background').innerHTML = `
     <article class="modal__gallery">
         <div class="modal__gallery--container---close">
-            <img class="modal__gallery--close" src="/images/icon-close.svg" alt="icon close">
+            <img class="modal__gallery--close" src="../images/icon-close.svg" alt="icon close">
         </div>
         <div id="imgP" class="modal__gallery--image--container">
             <figure class="modal__gallery--previous">
-                <img src="/images/icon-previous.svg" alt="previous">
+                <img src="../images/icon-previous.svg" alt="previous">
             </figure>
             <figure class="modal__gallery--next">
-                <img src="/images/icon-next.svg" alt="next">
+                <img src="../images/icon-next.svg" alt="next">
             </figure>
         </div>
         <div class="modal__gallery--images">
             <div class="modal__gallery--thumbnails">
                 <figure class="modal__gallery--thumbnail">
-                    <img id="mg1" src="/images/zapatato-bosi-1.png"   alt="thumbnail 1">
+                    <img id="mg1" src="../images/zapatato-bosi-1.png"   alt="thumbnail 1">
                 </figure>
                 <figure class="modal__gallery--thumbnail">
-                    <img id="mg2" src="/images/zapatato-bosi-1.png"   alt="thumbnail 2">
+                    <img id="mg2" src="../images/zapatato-bosi-1.png"   alt="thumbnail 2">
                 </figure>
                 <figure class="modal__gallery--thumbnail">
-                    <img id="mg3" src="/images/zapatato-bosi-1.png"   alt="thumbnail 3">
+                    <img id="mg3" src="../images/zapatato-bosi-1.png"   alt="thumbnail 3">
                 </figure>
                 <figure class="modal__gallery--thumbnail">
-                    <img id="mg4" src="/images/zapatato-bosi-1.png"   alt="thumbnail 4">
+                    <img id="mg4" src="../images/zapatato-bosi-1.png"   alt="thumbnail 4">
                 </figure>
             </div>
         </div>
