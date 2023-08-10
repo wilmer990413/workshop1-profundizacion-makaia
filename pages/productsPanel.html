@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/styles/styleModalGallery.css" />
     <link rel="stylesheet" href="/styles/styleModalForm.css" />
     <link rel="stylesheet" href="/styles/styleModalEditDelete.css" />
+    <link rel="stylesheet" href="/styles/styleNavBarVertical.css" />
 </head>
 <body>
     <main class="main">
@@ -50,141 +51,124 @@
                 </table>
             </article>
         </section>
-        <!-- gallery modal -->
-        <div class="modal__gallery--background">
-            <article class="modal__gallery">
-                <div class="modal__gallery--container---close">
-                    <img class="modal__gallery--close" src="/images/icon-close.svg" alt="icon close">
-                </div>
-                <div id="imgP" class="modal__gallery--image--container">
-                    <figure class="modal__gallery--previous">
-                        <img src="/images/icon-previous.svg" alt="previous">
-                    </figure>
-                    <figure class="modal__gallery--next">
-                        <img src="/images/icon-next.svg" alt="next">
-                    </figure>
-                </div>
-                <div class="modal__gallery--images">
-                    <div class="modal__gallery--thumbnails">
-                        <figure class="modal__gallery--thumbnail">
-                            <img id="mg1" src="/images/zapatato-bosi-1.png"   alt="thumbnail 1">
-                        </figure>
-                        <figure class="modal__gallery--thumbnail">
-                            <img id="mg2" src="/images/zapatato-bosi-1.png"   alt="thumbnail 2">
-                        </figure>
-                        <figure class="modal__gallery--thumbnail">
-                            <img id="mg3" src="/images/zapatato-bosi-1.png"   alt="thumbnail 3">
-                        </figure>
-                        <figure class="modal__gallery--thumbnail">
-                            <img id="mg4" src="/images/zapatato-bosi-1.png"   alt="thumbnail 4">
-                        </figure>
-                    </div>
-                </div>
-            </article>
-        </div>
-        <!-- create modal -->
-        <div id="createModal" class="modal__form--background">
-            <div class="modal__form--container---close">
-                <img id="closeImgCreate" class="modal__form--close" src="/images/icon-close.svg" alt="icon close">
-            </div>
-            <form id="createProduct" class="modal__form--form">
-                <h2>Create</h2>
-                <label class="modal__form--label" for="name">Name</label>
-                <input name="name" id="name" class="modal__form--input" required type="text">
-                <label class="modal__form--label" for="company">Company</label>
-                <input name="company" id="company" class="modal__form--input" required type="text">
-                <label class="modal__form--label" for="price">Price</label>
-                <input name="price" id="price" class="modal__form--input" required type="number">
-                <label class="modal__form--label" for="description">Description</label>
-                <textarea name="description" id="description" class="modal__form--input" required type="text"></textarea>
-                <label class="modal__form--label" for="stock">Stock</label>
-                <input name="stock" id="stock" class="modal__form--input" required type="number">
-                <label class="modal__form--label" for="discount">Discount</label>
-                <input name="discount" id="discount" class="modal__form--input" required type="number">
-                <label class="modal__form--label" for="genre">Genre</label>
-                <div class="modal__form--genre">
-                    <label class="modal__form--label" for="male">Male</label>
-                    <input name="genre" id="male" class="modal__form--input" required type="radio" value="M">
-                    <label class="modal__form--label" for="female">Female</label>
-                    <input name="genre" id="female" class="modal__form--input" required type="radio" value="F">
-                </div>
-                <label class="modal__form--label" for="collections">Collections</label>
-                <select name="collections" id="collections" class="modal__form--input" required>
-                </select>
-                <label class="modal__form--label" for="image1">Image 1</label>
-                <input class="modal__form--input" required type="text" placeholder="URL Image 1" name="image1" id="image1">
-                <label class="modal__form--label" for="image2">Image 2</label>
-                <input class="modal__form--input" required type="text" placeholder="URL Image 2" name="image2" id="image2">
-                <label class="modal__form--label" for="image3">Image 3</label>
-                <input class="modal__form--input" required type="text" placeholder="URL Image 3" name="image3" id="image3">
-                <label class="modal__form--label" for="image4">Image 4</label>
-                <input class="modal__form--input" required type="text" placeholder="URL Image 4" name="image4" id="image4">
-                <button class="modal__form--button" type="submit">Create</button>
-            </form>
-        </div>
-        <!-- edit modal -->
-        <div id="editModal" class="modal__form--background">
-            <div class="modal__form--container---close">
-                <img id="closeImgEdit" class="modal__form--close" src="/images/icon-close.svg" alt="icon close">
-            </div>
-            <form id="editProduct" class="modal__form--form">
-                <h2>Edit</h2>
-                <label class="modal__form--label" for="name">Name</label>
-                <input name="name" id="name" class="modal__form--input" required type="text">
-                <label class="modal__form--label" for="company">Company</label>
-                <input name="company" id="company" class="modal__form--input" required type="text">
-                <label class="modal__form--label" for="price">Price</label>
-                <input name="price" id="price" class="modal__form--input" required type="number">
-                <label class="modal__form--label" for="description">Description</label>
-                <textarea name="description" id="description" class="modal__form--input" required type="text"></textarea>
-                <label class="modal__form--label" for="stock">Stock</label>
-                <input name="stock" id="stock" class="modal__form--input" required type="number">
-                <label class="modal__form--label" for="discount">Discount</label>
-                <input name="discount" id="discount" class="modal__form--input" required type="number">
-                <label class="modal__form--label" for="genre">Genre</label>
-                <div class="modal__form--genre">
-                    <label class="modal__form--label" for="male">Male</label>
-                    <input name="genre" id="male" class="modal__form--input" required type="radio" value="M">
-                    <label class="modal__form--label" for="female">Female</label>
-                    <input name="genre" id="female" class="modal__form--input" required type="radio" value="F">
-                </div>
-                <label class="modal__form--label" for="collections">Collections</label>
-                <select name="collections" id="collections" class="modal__form--input" required>
-                </select>
-                <label class="modal__form--label" for="image1">Image 1</label>
-                <input class="modal__form--input" required type="text" placeholder="URL Image 1" name="image1" id="image1">
-                <label class="modal__form--label" for="image2">Image 2</label>
-                <input class="modal__form--input" required type="text" placeholder="URL Image 2" name="image2" id="image2">
-                <label class="modal__form--label" for="image3">Image 3</label>
-                <input class="modal__form--input" required type="text" placeholder="URL Image 3" name="image3" id="image3">
-                <label class="modal__form--label" for="image4">Image 4</label>
-                <input class="modal__form--input" required type="text" placeholder="URL Image 4" name="image4" id="image4">
-                <button class="modal__form--button" type="submit">Edit</button>
-            </form>
-        </div>
-        <!-- edit y delete modal -->
-        <div id="editDeleteModal" class="modal__editdelete--background">
-            <div class="modal__editdelete--container---close">
-                <img class="modal__editdelete--close" src="/images/icon-close.svg" alt="icon close">
-            </div>
-            <div class = "modal__editdelete" tabindex="0">
-                <button class="modal__editdelete--button edit">
-                    <figure>
-                        <img src="/images/icon-edit.svg" alt="cart">
-                    </figure>
-                    <p>Edit</p>
-                </button>
-                <button class="modal__editdelete--button delete">
-                    <figure>
-                        <img src="/images/icon-delete.svg" alt="cart">
-                    </figure>
-                    <p>Delete</p>
-                </button>
-            </div>
-        </div>
     </main>
+    <!-- gallery modal -->
+    <div class="modal__gallery--background">
+    </div>
+    <!-- create modal -->
+    <div id="createModal" class="modal__form--background">
+        <div class="modal__form--container---close">
+            <img id="closeImgCreate" class="modal__form--close" src="/images/icon-close.svg" alt="icon close">
+        </div>
+        <form id="createProduct" class="modal__form--form">
+            <h2>Create</h2>
+            <label class="modal__form--label" for="name">Name</label>
+            <input name="name" id="name" class="modal__form--input" required type="text">
+            <label class="modal__form--label" for="company">Company</label>
+            <input name="company" id="company" class="modal__form--input" required type="text">
+            <label class="modal__form--label" for="price">Price</label>
+            <input name="price" id="price" class="modal__form--input" required type="number" min="0">
+            <label class="modal__form--label" for="description">Description</label>
+            <textarea name="description" id="description" class="modal__form--input" required type="text"></textarea>
+            <label class="modal__form--label" for="stock">Stock</label>
+            <input name="stock" id="stock" class="modal__form--input" required type="number" min="0">
+            <label class="modal__form--label" for="discount">Discount</label>
+            <input name="discount" id="discount" class="modal__form--input" required type="number" min="0" max="100">
+            <label class="modal__form--label" for="genre">Genre</label>
+            <div class="modal__form--genre">
+                <label class="modal__form--label" for="male">Male</label>
+                <input name="genre" id="male" class="modal__form--input" required type="radio" value="M">
+                <label class="modal__form--label" for="female">Female</label>
+                <input name="genre" id="female" class="modal__form--input" required type="radio" value="F">
+            </div>
+            <label class="modal__form--label" for="collections">Collections</label>
+            <select name="collections" id="collections" class="modal__form--input" required>
+            </select>
+            <label class="modal__form--label" for="image1">Image 1</label>
+            <input class="modal__form--input" required type="text" placeholder="URL Image 1" name="image1" id="image1">
+            <label class="modal__form--label" for="image2">Image 2</label>
+            <input class="modal__form--input" required type="text" placeholder="URL Image 2" name="image2" id="image2">
+            <label class="modal__form--label" for="image3">Image 3</label>
+            <input class="modal__form--input" required type="text" placeholder="URL Image 3" name="image3" id="image3">
+            <label class="modal__form--label" for="image4">Image 4</label>
+            <input class="modal__form--input" required type="text" placeholder="URL Image 4" name="image4" id="image4">
+            <button class="modal__form--button" type="submit">Create</button>
+        </form>
+    </div>
+    <!-- edit modal -->
+    <div id="editModal" class="modal__form--background">
+        <div class="modal__form--container---close">
+            <img id="closeImgEdit" class="modal__form--close" src="/images/icon-close.svg" alt="icon close">
+        </div>
+        <form id="editProduct" class="modal__form--form">
+            <h2>Edit</h2>
+            <label class="modal__form--label" for="name">Name</label>
+            <input name="name" id="name" class="modal__form--input" required type="text">
+            <label class="modal__form--label" for="company">Company</label>
+            <input name="company" id="company" class="modal__form--input" required type="text">
+            <label class="modal__form--label" for="price">Price</label>
+            <input name="price" id="price" class="modal__form--input" required type="number" min="0">
+            <label class="modal__form--label" for="description">Description</label>
+            <textarea name="description" id="description" class="modal__form--input" required type="text"></textarea>
+            <label class="modal__form--label" for="stock">Stock</label>
+            <input name="stock" id="stock" class="modal__form--input" required type="number" min="0">
+            <label class="modal__form--label" for="discount">Discount</label>
+            <input name="discount" id="discount" class="modal__form--input" required type="number" min="0" max="100">
+            <label class="modal__form--label" for="genre">Genre</label>
+            <div class="modal__form--genre">
+                <label class="modal__form--label" for="male">Male</label>
+                <input name="genre" id="male" class="modal__form--input" required type="radio" value="M">
+                <label class="modal__form--label" for="female">Female</label>
+                <input name="genre" id="female" class="modal__form--input" required type="radio" value="F">
+            </div>
+            <label class="modal__form--label" for="collections">Collections</label>
+            <select name="collections" id="collections" class="modal__form--input" required>
+            </select>
+            <label class="modal__form--label" for="image1">Image 1</label>
+            <input class="modal__form--input" required type="text" placeholder="URL Image 1" name="image1" id="image1">
+            <label class="modal__form--label" for="image2">Image 2</label>
+            <input class="modal__form--input" required type="text" placeholder="URL Image 2" name="image2" id="image2">
+            <label class="modal__form--label" for="image3">Image 3</label>
+            <input class="modal__form--input" required type="text" placeholder="URL Image 3" name="image3" id="image3">
+            <label class="modal__form--label" for="image4">Image 4</label>
+            <input class="modal__form--input" required type="text" placeholder="URL Image 4" name="image4" id="image4">
+            <button class="modal__form--button" type="submit">Edit</button>
+        </form>
+    </div>
+    <!-- edit y delete modal -->
+    <div id="editDeleteModal" class="modal__editdelete--background">
+        <div class="modal__editdelete--container---close">
+            <img class="modal__editdelete--close" src="/images/icon-close.svg" alt="icon close">
+        </div>
+        <div class = "modal__editdelete" tabindex="0">
+            <button class="modal__editdelete--button edit">
+                <figure>
+                    <img src="/images/icon-edit.svg" alt="cart">
+                </figure>
+                <p>Edit</p>
+            </button>
+            <button class="modal__editdelete--button delete">
+                <figure>
+                    <img src="/images/icon-delete.svg" alt="cart">
+                </figure>
+                <p>Delete</p>
+            </button>
+        </div>
+    </div>
+    <!-- navbar vertical -->
+    <div class="modal-navbar_background">
+        <nav class="modal-navbar">
+            <figure class="modal-navbar_close-icon">
+                <img src="/images/icon-close.svg" alt="close icon">
+            </figure>
+            <ul class="modal-navbar_items">
+                <li><a class="modal-navbar_link" href="/pages/productsPanel.html">Products</a></li>
+                <li><a class="modal-navbar_link" href="/pages/collectionsPanel.html">Collections</a></li>
+            </ul>
+        </nav>
+    </div>
     <script src="/scripts/productPanel.js" type="module"></script>
-    <script src="/scripts/modalForm.js"></script>
-    <script src="/scripts/modalEditDelete.js"></script>
+    <script src="/scripts/modalForm.js" type="module"></script>
+    <script src="/scripts/modalEditDelete.js" type="module"></script>
 </body>
 </html>

@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="/styles/stylePanel.css" />
     <link rel="stylesheet" href="/styles/styleModalForm.css" />
     <link rel="stylesheet" href="/styles/styleModalEditDelete.css" />
+    <link rel="stylesheet" href="/styles/styleNavBarVertical.css" />
+    <style> body, html {height: 100%;} .main{padding: 0 !important;}</style>
 </head>
 <body>
     <main class="main">
@@ -86,8 +88,20 @@
             </button>
         </div>
     </div>
+    <!-- navbar vertical -->
+    <div class="modal-navbar_background">
+        <nav class="modal-navbar">
+            <figure class="modal-navbar_close-icon">
+                <img src="/images/icon-close.svg" alt="close icon">
+            </figure>
+            <ul class="modal-navbar_items">
+                <li><a class="modal-navbar_link" href="/pages/productsPanel.html">Products</a></li>
+                <li><a class="modal-navbar_link" href="/pages/collectionsPanel.html">Collections</a></li>
+            </ul>
+        </nav>
+    </div>
     <script src="/scripts/collectionsPanel.js" type="module"></script>
-    <script src="/scripts/modalForm.js"></script>
-    <script src="/scripts/modalEditDelete.js"></script>
+    <script src="/scripts/modalForm.js" type="module"></script>
+    <script src="/scripts/modalEditDelete.js" type="module"></script>
 </body>
 </html>

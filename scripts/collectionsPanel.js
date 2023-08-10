@@ -1,5 +1,8 @@
 import { listCollections, collectionsById ,createCollection, updateCollection, deleteCollection} from '../services/collections.js';
 import {alertConfirmationAction,alertMessageSuccessAction} from '../sweetalert/alertConfirmation.js';
+import { hideModalForm } from './modalForm.js';
+import { hideModalEditDelete } from './modalEditDelete.js';
+import { initNavBarVertical } from './navBarVertical.js';
 
 const formCreate = document.getElementById('createCollection');
 const formEdit = document.getElementById('editCollection');
@@ -16,6 +19,7 @@ async function startCollectionPanel(){
         `;
     });
     document.querySelector('.create').addEventListener('click', ()=>{startCreateCollection()});
+    document.querySelector('.header__menu--icon').addEventListener('click', ()=>{initNavBarVertical()});
     aggEventsTableCollections();
 }
 
@@ -38,8 +42,7 @@ async function actionButtonCreateCollection(){
                 await alertMessageSuccessAction(
                     'La colleción se creo con exito',
                     async () =>{
-                        document.querySelector('.modal__form--background').style.display = 'none';
-                        location.reload();
+                        hideModalForm();
                     }
                 );
             }
@@ -80,8 +83,7 @@ async function startEditCollection(idCollection){
                     await alertMessageSuccessAction(
                         'La colección se actualizo con exito',
                         async () =>{
-                            document.querySelector('.modal__form--background').style.display = 'none';
-                            location.reload();
+                            hideModalForm();
                         }
                     );
                 }
@@ -100,8 +102,7 @@ async function startDeleteCollection(idCollection){
                 await alertMessageSuccessAction(
                     'El producto se elimino con exito',
                     async () =>{
-                        document.querySelector('.modal__editdelete--background').style.display = 'none';
-                        location.reload();
+                        hideModalEditDelete();
                     }
                 );
             }

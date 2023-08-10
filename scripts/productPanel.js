@@ -2,6 +2,10 @@
 import { listProducts,createProduct,updateProduct,productById,deleteProduct } from '../services/products.js';
 import { listCollections } from '../services/collections.js';
 import {alertConfirmationAction,alertMessageSuccessAction} from '../sweetalert/alertConfirmation.js';
+import { hideModalForm } from './modalForm.js';
+import { hideModalEditDelete } from './modalEditDelete.js';
+import { showModalGallery } from './modalGallery.js';
+import { initNavBarVertical } from './navBarVertical.js';
 
 const formCreate = document.getElementById('createProduct');
 const formEdit = document.getElementById('editProduct');
@@ -30,6 +34,7 @@ async function startProductPanel(){
         `;
     });
     document.querySelector('.create').addEventListener('click', ()=>{startCreateProduct()});
+    document.querySelector('.header__menu--icon').addEventListener('click', ()=>{initNavBarVertical()});
     aggEventsTableProducts();
 }
 
@@ -66,8 +71,7 @@ async function actionButtonCreateProduct(){
                 await alertMessageSuccessAction(
                     'El producto se creo con exito',
                     async () =>{
-                        document.querySelector('.modal__form--background').style.display = 'none';
-                        location.reload();
+                        hideModalForm();
                     }
                 );
             }
@@ -81,26 +85,36 @@ function cleanDataFormProduct(formData){
     for (let [key, value] of formData.entries()) {
         productData[key] = value;
     }
-    let auxJson = {
+    let auxImages = {
         images: []
     }
-    auxJson.images[0]={link: productData.image1};
-    auxJson.images[1]={link: productData.image2};
-    auxJson.images[2]={link: productData.image3};
-    auxJson.images[3]={link: productData.image4};
+    auxImages.images[0]={link: productData.image1};
+    auxImages.images[1]={link: productData.image2};
+    auxImages.images[2]={link: productData.image3};
+    auxImages.images[3]={link: productData.image4};
     delete productData.image1;
     delete productData.image2;
     delete productData.image3;
     delete productData.image4;
-    Object.assign(productData, auxJson);
+    Object.assign(productData, auxImages);
     return productData;
 }
 
 function aggEventsTableProducts(){
     let productsInTable = document.querySelectorAll('.article__items--table--tr');
     for (let index = 0; index < productsInTable.length; index++) {
-        productsInTable[index].addEventListener('click',function () {selectionEditOrDelete(index);});
+        productsInTable[index].addEventListener('dblclick',function () {selectionEditOrDelete(index);});
     }
+    let productsImagesInTable = document.querySelectorAll('.images__products');
+    for (let index = 0; index < productsImagesInTable.length; index++) {
+        productsImagesInTable[index].addEventListener('click',function(){initModalGallery(index)});
+    }
+}
+
+async function initModalGallery(index){
+    let idProduct = document.querySelectorAll('.article__items--table--tr')[index].querySelector('td').textContent;
+    let product = await productById(idProduct);
+    showModalGallery(product);
 }
 
 function selectionEditOrDelete(index){
@@ -120,8 +134,7 @@ async function startDeleteProduct(idProduct){
                 await alertMessageSuccessAction(
                     'El producto se elimino con exito',
                     async () =>{
-                        document.querySelector('.modal__editdelete--background').style.display = 'none';
-                        location.reload();
+                        hideModalEditDelete();
                     }
                 );
             }
@@ -168,8 +181,7 @@ async function actionButtonUpdateProduct(idProduct){
                 await alertMessageSuccessAction(
                     'El producto se actualizo con exito',
                     async () =>{
-                        document.querySelector('.modal__form--background').style.display = 'none';
-                        location.reload();
+                        hideModalForm();
                     }
                 );
             }

@@ -4,9 +4,16 @@
     font-family: "Kumbh Sans", sans-serif;
 }
 
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
 .main{
     margin-left: 5%;
     margin-right: 5%;
+    padding-bottom: 5%;
+    height: 100%;
 }
 
 .header{
@@ -112,4 +119,8 @@
 
 .article__items--table--tr:hover{
     cursor:pointer;
+}
+
+.header__menu--icon:hover{
+    cursor: pointer;
 }
